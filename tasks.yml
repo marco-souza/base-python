@@ -1,0 +1,11 @@
+main:
+  tasks:
+    - install
+    - run
+
+install:
+  - pip install -e .[dev]
+
+run:
+  - cli_base
+  - cli_base Doido
