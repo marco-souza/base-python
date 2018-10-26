@@ -1,11 +1,28 @@
+# bundles
 main:
   tasks:
     - install
     - run
+lint:
+  tasks:
+    - linters
+    - doc
 
+# tasks
 install:
   - pip install -e .[dev]
 
 run:
   - cli_base
   - cli_base Doido
+
+linters:
+  - flake8 base_python
+  - pylint base_python
+  - pycodestyle base_python
+
+doc:
+  - pydocstyle base_python
+
+test:
+  - pytest base_python
